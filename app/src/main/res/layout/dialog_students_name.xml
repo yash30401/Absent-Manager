@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/dialog_layout"
+    android:layout_margin="20dp"
+
+    android:layout_gravity="center_horizontal|center_vertical"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFBB33"
+        android:contentDescription="@string/app_name"
+        android:scaleType="center"
+        android:src="@drawable/ic_baseline_people_24"
+
+        />
+
+    <EditText
+        android:id="@+id/studentName"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/student_name_string"
+
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+        <Button
+            android:id="@+id/addStudent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/add_student"
+            android:background="@drawable/button_design"
+            android:textColor="@color/white"
+            android:onClick="addStudentClick"
+            />
+
+        <Button
+            android:id="@+id/cancel_student"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/cancel_student"
+            android:background="@drawable/button_design"
+            android:textColor="@color/white"
+            android:onClick="cancelStudentClick"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

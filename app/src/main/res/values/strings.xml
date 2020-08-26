@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Attendance Manager</string>
+    <string name="attendence_manager">Attendance Manager</string>
+    <string name="kendriya_vidyalaya">KENDRIYA VIDYALAYA</string>
+
+    <string name="fab_content_desc">fab_content_desc</string>
+    <string name="text_input_title">Type The Name Of Student</string>
+    <string name="text_input_error_message">Please Type Correct Name.</string>
+    <string name="done">Done</string>
+    <string name="student_name_string">Enter Name:</string>
+    <string name="add_student">Add</string>
+    <string name="cancel_student">Cancel</string>
+    <string name="select_the_studentswho_are_absent">Select The Students Who are absent.</string>
+    <string name="absent">Absent</string>
+    <string name="next">Next</string>
+
+</resources>

@@ -18,10 +18,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
+import java.util.ArrayList;
 
 
 public class Main2Activity extends AppCompatActivity {
@@ -36,14 +39,11 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-
-    LinearLayout linearLayout;
-
-    CheckBox checkBox;
-
-
-
     MyDataHelper myDataHelper;
+
+    ListView absentStudentListView;
+
+    ArrayAdapter<String> absentStudentArrayAdapter;
 
 
     //onCreate Starts From her------------------------------------------------------------------------
@@ -58,15 +58,18 @@ public class Main2Activity extends AppCompatActivity {
 
         sqLiteDatabase2=myDataHelper.getWritableDatabase();
 
-            sqLiteDatabase=this.openOrCreateDatabase("com.yashveer.attendencemanager",MODE_PRIVATE,null);
+        sqLiteDatabase=this.openOrCreateDatabase("com.yashveer.attendencemanager",MODE_PRIVATE,null);
 
-            c=sqLiteDatabase.rawQuery("SELECT * FROM studentsName",null);
+        c=sqLiteDatabase.rawQuery("SELECT * FROM studentsName",null);
 
-            studentCount=new String[c.getCount()];
-            linearLayout=findViewById(R.id.Linearlay);
-        linearLayout.setPadding(30,20,30,10);
+        studentCount=new String[c.getCount()];
+
+        absentStudentListView=findViewById(R.id.absentStudentListView);
 
 
+         absentStudentArrayAdapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,studentCount);
+
+         absentStudentListView.setAdapter(absentStudentArrayAdapter);
 
 
         c.moveToFirst();
@@ -80,42 +83,6 @@ public class Main2Activity extends AppCompatActivity {
 
                 c.moveToNext();
             }
-
-            for(int i=0;i<studentCount.length;i++) {
-                checkBox=new CheckBox(this);
-               checkBox.setText(studentCount[i]);
-
-               checkBox.setPadding(20,20,30,20);
-                checkBox.setTextColor(getColor(R.color.white));
-               checkBox.setElevation(10);
-               checkBox.setTranslationZ(10);
-               checkBox.setTextSize(20);
-               checkBox.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-               checkBox.setId(i);
-
-
-
-               checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-
-                linearLayout.addView(checkBox);
-
-
-
-            }//For Loop Ends here
-
-
-
-
-             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                 @Override
-                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                     myDataHelper.absentinsertData(buttonView.getText().toString(),sqLiteDatabase2);
-                 }
-             });
-
-
-
-
 
 
 

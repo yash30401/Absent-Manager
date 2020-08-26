@@ -19,7 +19,7 @@ public class absentStudent extends AppCompatActivity {
 
     Cursor c;
 
-    ArrayList<String> absentarryList;
+
 
     ListView absentListview;
 
@@ -38,6 +38,10 @@ public class absentStudent extends AppCompatActivity {
 
         studentCount=new String[c.getCount()];
 
+        absentListAdapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,studentCount);
+
+        absentListview.setAdapter(absentListAdapter);
+
         c.moveToFirst();
 
 
@@ -46,12 +50,7 @@ public class absentStudent extends AppCompatActivity {
             c.moveToNext();
         }
 
-        absentarryList=new ArrayList<>();
-        absentarryList.add(studentCount.toString());
 
-        absentListAdapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,absentarryList);
-
-        absentListview.setAdapter(absentListAdapter);
 
 
 

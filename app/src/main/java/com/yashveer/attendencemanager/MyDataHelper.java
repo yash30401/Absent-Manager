@@ -33,10 +33,10 @@ public class MyDataHelper extends SQLiteOpenHelper {
 
     }
 
-    public void absentinsertData(String name,SQLiteDatabase database2){
+    public void absentinsertData(String name,SQLiteDatabase database){
         ContentValues values2=new ContentValues();
         values2.put("absentname",name);
-        database2.insert("absentstudentsName",null,values2);
+        database.insert("absentstudentsName",null,values2);
 
     }
 

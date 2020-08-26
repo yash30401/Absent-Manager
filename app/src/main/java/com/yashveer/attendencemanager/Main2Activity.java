@@ -12,28 +12,32 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 
+
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
 import android.view.View;
 
 
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
-import java.util.ArrayList;
+import android.widget.ListView;
+import android.widget.Toast;
+
+
+
 
 
 public class Main2Activity extends AppCompatActivity {
 
 
-    String studentCount[];
+    String []studentCount;
 
     SQLiteDatabase sqLiteDatabase;
-    SQLiteDatabase sqLiteDatabase2;
+
 
     Cursor c;
 
@@ -56,7 +60,7 @@ public class Main2Activity extends AppCompatActivity {
 
         myDataHelper=new MyDataHelper(this);
 
-        sqLiteDatabase2=myDataHelper.getWritableDatabase();
+        sqLiteDatabase=myDataHelper.getWritableDatabase();
 
         sqLiteDatabase=this.openOrCreateDatabase("com.yashveer.attendencemanager",MODE_PRIVATE,null);
 
@@ -84,6 +88,20 @@ public class Main2Activity extends AppCompatActivity {
                 c.moveToNext();
             }
 
+            //ListView Onclick Starts from here
+
+                absentStudentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        myDataHelper.absentinsertData(parent.getItemAtPosition(position).toString(),sqLiteDatabase);
+
+                        Toast.makeText(Main2Activity.this,"Student "+parent.getItemAtPosition(position).toString()+" Added to absent List",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+            //ListVeiw on click ends Here
 
 
 
@@ -93,25 +111,19 @@ public class Main2Activity extends AppCompatActivity {
     //on create Ends Here----------------------------------------------------------------------------------------------------------------
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.actionbarmenu,menu);
-        return true;
+    //Button Next Click listner Starts from Here
+    public void next(View view){
+        Intent i=new Intent(Main2Activity.this,absentStudent.class);
+        startActivity(i);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id=item.getItemId();
-       switch (id){
-            case R.id.next:
-                Intent i=new Intent(Main2Activity.this,absentStudent.class);
-                startActivity(i);
-                return true;
+    //Button Next click Listner ends Here
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+
+
+
+
+
+
 }
 

@@ -135,7 +135,7 @@ public class Attendence_Manager extends AppCompatActivity {
 
 
 
-                builder.setMessage("Do you want to remaove this Name from your List?");
+                builder.setMessage("Do you want to remove this Name from your List?");
                 builder.setPositiveButton("Confirm",
                         new DialogInterface.OnClickListener() {
                             @Override

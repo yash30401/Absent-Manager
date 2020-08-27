@@ -31,13 +31,17 @@ public class Main2Activity extends AppCompatActivity {
     String []studentCount;
 
     SQLiteDatabase sqLiteDatabase;
+    SQLiteDatabase sqLiteDatabase2;
+
 
 
     Cursor c;
 
 
 
-    MyDataHelper myDataHelper;
+
+
+    MyDataHelper2 myDataHelper2;
 
     ListView absentStudentListView;
 
@@ -52,11 +56,13 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-        myDataHelper=new MyDataHelper(this);
 
-        sqLiteDatabase=myDataHelper.getWritableDatabase();
+        myDataHelper2=new MyDataHelper2(this);
+
+        sqLiteDatabase2=myDataHelper2.getWritableDatabase();
 
         sqLiteDatabase=this.openOrCreateDatabase("com.yashveer.attendencemanager",MODE_PRIVATE,null);
+
 
         c=sqLiteDatabase.rawQuery("SELECT * FROM studentsName",null);
 
@@ -88,7 +94,7 @@ public class Main2Activity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                        myDataHelper.absentinsertData(parent.getItemAtPosition(position).toString(),sqLiteDatabase);
+                        myDataHelper2.insertData(parent.getItemAtPosition(position).toString(),sqLiteDatabase2);
 
                         Toast.makeText(Main2Activity.this,"Student "+parent.getItemAtPosition(position).toString()+" Added to absent List",Toast.LENGTH_SHORT).show();
 

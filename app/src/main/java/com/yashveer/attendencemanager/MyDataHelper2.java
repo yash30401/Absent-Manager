@@ -5,19 +5,19 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class MyDataHelper extends SQLiteOpenHelper {
+public class MyDataHelper2 extends SQLiteOpenHelper {
 
-    private static final String dbName="com.yashveer.attendencemanager";
+    private static final String dbName="com.yashveer.attendencemanager2";
     private static final int versionOfDb=1;
 
-    public MyDataHelper(Context context){
+    public MyDataHelper2(Context context){
         super(context,dbName,null,versionOfDb);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sql="CREATE TABLE IF NOT EXISTS studentsName (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT) ";
+        String sql="CREATE TABLE absentstudentsName (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT) ";
         db.execSQL(sql);
 
 
@@ -27,7 +27,7 @@ public class MyDataHelper extends SQLiteOpenHelper {
     public void insertData(String name,SQLiteDatabase database){
         ContentValues values=new ContentValues();
         values.put("name",name);
-        database.insert("studentsName",null,values);
+        database.insert("absentstudentsName",null,values);
 
     }
 

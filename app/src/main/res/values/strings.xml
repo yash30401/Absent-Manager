@@ -13,5 +13,6 @@
     <string name="select_the_studentswho_are_absent">Select The Students Who are absent.</string>
     <string name="absent">Absent</string>
     <string name="next">Next</string>
+    <string name="list_of_students_who_are_absent">List Of Students Who are Absent</string>
 
 </resources>

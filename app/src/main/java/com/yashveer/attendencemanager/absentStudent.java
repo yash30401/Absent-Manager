@@ -5,9 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 
 public class absentStudent extends AppCompatActivity {
@@ -24,6 +29,8 @@ public class absentStudent extends AppCompatActivity {
     ListView absentListview;
 
     ArrayAdapter<String> absentListAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,8 @@ public class absentStudent extends AppCompatActivity {
 
         absentListview.setAdapter(absentListAdapter);
 
+
+
         c.moveToFirst();
 
 
@@ -51,6 +60,12 @@ public class absentStudent extends AppCompatActivity {
             c.moveToNext();
         }
 
+        String currentTime = new SimpleDateFormat("hh:mm:ss:a", Locale.getDefault()).format(new Date());
+
+        do{
+            String sql="DELETE FROM absentstudentsName";
+            sqLiteDatabase2.execSQL(sql);
+        }while (currentTime=="12:00:00:PM");
 
 
 

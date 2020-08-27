@@ -8,11 +8,27 @@
 
     <ListView
         android:id="@+id/absentListView"
-        android:layout_width="352dp"
-        android:layout_height="655dp"
+        android:layout_width="351dp"
+        android:layout_height="629dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/pt_sans"
+        android:padding="10dp"
+        android:text="@string/list_of_students_who_are_absent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/absentListView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import android.os.Bundle;
 
 
+import android.os.Handler;
 import android.view.View;
 
 
@@ -32,7 +34,8 @@ public class Main2Activity extends AppCompatActivity {
     SQLiteDatabase sqLiteDatabase;
     SQLiteDatabase sqLiteDatabase2;
 
-
+    SharedPreferences sharedpreferences;
+    SharedPreferences.Editor editor;
 
     Cursor c;
 
@@ -62,6 +65,8 @@ public class Main2Activity extends AppCompatActivity {
 
         sqLiteDatabase=this.openOrCreateDatabase("com.yashveer.attendencemanager",MODE_PRIVATE,null);
 
+        sharedpreferences = getSharedPreferences("com.yashveer.attendencemanager", MODE_PRIVATE);
+        editor = sharedpreferences.edit();
 
         c=sqLiteDatabase.rawQuery("SELECT * FROM studentsName",null);
 
@@ -112,8 +117,20 @@ public class Main2Activity extends AppCompatActivity {
 
     //Button Next Click listner Starts from Here
     public void next(View view){
-        Intent i=new Intent(Main2Activity.this,absentStudent.class);
-        startActivity(i);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                editor.putBoolean("FirstTime2", false);
+                editor.commit();
+
+                Intent i = new Intent(Main2Activity.this, absentStudent.class);
+
+                startActivity(i);
+
+                finish();
+            }
+        }, 0);
     }
 
     //Button Next click Listner ends Here

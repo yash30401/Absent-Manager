@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean FirstTime;
     SharedPreferences sharedPreferences;
-
+    boolean FirstTime2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
          sharedPreferences=getSharedPreferences("com.yashveer.attendencemanager",MODE_PRIVATE);
          FirstTime=sharedPreferences.getBoolean("FirstTime",true);
-
+        FirstTime2=sharedPreferences.getBoolean("FirstTime2",true);
 
     new Handler().postDelayed(new Runnable() {
         @Override
@@ -40,6 +40,17 @@ public class MainActivity extends AppCompatActivity {
             }else{
 
                 Intent i=new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(i);
+
+            }
+
+
+            if (FirstTime2==true){
+                Intent i=new Intent(MainActivity.this,Attendence_Manager.class);
+                startActivity(i);
+            }else{
+
+                Intent i=new Intent(MainActivity.this,absentStudent.class);
                 startActivity(i);
 
             }

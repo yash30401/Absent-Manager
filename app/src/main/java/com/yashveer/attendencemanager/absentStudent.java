@@ -2,15 +2,22 @@ package com.yashveer.attendencemanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -22,6 +29,7 @@ public class absentStudent extends AppCompatActivity {
 
     SQLiteDatabase sqLiteDatabase2;
 
+
     Cursor c;
 
 
@@ -30,6 +38,10 @@ public class absentStudent extends AppCompatActivity {
 
     ArrayAdapter<String> absentListAdapter;
 
+    private AlarmManager alarmMgr;
+    private PendingIntent alarmIntent;
+
+    Calendar calendar;
 
 
     @Override
@@ -51,7 +63,6 @@ public class absentStudent extends AppCompatActivity {
         absentListview.setAdapter(absentListAdapter);
 
 
-
         c.moveToFirst();
 
 
@@ -60,17 +71,31 @@ public class absentStudent extends AppCompatActivity {
             c.moveToNext();
         }
 
-        String currentTime = new SimpleDateFormat("hh:mm:ss:a", Locale.getDefault()).format(new Date());
 
-        do{
-            String sql="DELETE FROM absentstudentsName";
-            sqLiteDatabase2.execSQL(sql);
-        }while (currentTime=="12:00:00:PM");
 
+        alarmMgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlarmReciever.class);
+        alarmIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+         calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 00);
+        calendar.set(Calendar.MINUTE, 00);
+
+
+        alarmMgr.setInexactRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, alarmIntent);
 
 
 
 
 
     }
+
+public void DelteDataInAlarmReciever(){
+        String sql="DELETE FROM absentstudentsName";
+        sqLiteDatabase2.execSQL(sql);
+}
+
+
 }

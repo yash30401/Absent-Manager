@@ -117,12 +117,6 @@ public class Attendence_Manager extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
         // ListView Item Selected Start From Here!>--------------------------------------------------------------------------------------------
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

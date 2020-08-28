@@ -10,16 +10,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import android.os.SystemClock;
-import android.util.Log;
+
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+
 
 
 public class absentStudent extends AppCompatActivity {
@@ -79,8 +75,8 @@ public class absentStudent extends AppCompatActivity {
 
          calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 00);
-        calendar.set(Calendar.MINUTE, 00);
+        calendar.set(Calendar.HOUR_OF_DAY, 24);
+        calendar.set(Calendar.MINUTE, 0);
 
 
         alarmMgr.setInexactRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),

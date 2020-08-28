@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             if (FirstTime2==true){
-                Intent i=new Intent(MainActivity.this,Attendence_Manager.class);
+                Intent i=new Intent(MainActivity.this,Main2Activity.class);
                 startActivity(i);
             }else{
 

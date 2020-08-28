@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -51,6 +52,8 @@ public class Main2Activity extends AppCompatActivity {
     SharedPreferences sharedpreferences;
     SharedPreferences.Editor editor;
 
+    Button nextButton;
+
 
 
 
@@ -60,7 +63,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
+        nextButton=findViewById(R.id.nextButton);
 
         sharedpreferences = getSharedPreferences("com.yashveer.attendencemanager", MODE_PRIVATE);
         editor = sharedpreferences.edit();
@@ -103,8 +106,9 @@ public class Main2Activity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         myDataHelper2.insertData(parent.getItemAtPosition(position).toString(),sqLiteDatabase2);
-
+                        nextButton.setVisibility(View.VISIBLE);
                         Toast.makeText(Main2Activity.this,"Student "+parent.getItemAtPosition(position).toString()+" Added to absent List",Toast.LENGTH_SHORT).show();
+
 
                     }
                 });
@@ -120,21 +124,23 @@ public class Main2Activity extends AppCompatActivity {
 
 
     //Button Next Click listner Starts from Here
-    public void next(View view){
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+    public void next(View view) {
 
-                editor.putBoolean("FirstTime2", false);
-                editor.commit();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
 
-                Intent i = new Intent(Main2Activity.this, absentStudent.class);
+                    editor.putBoolean("FirstTime2", false);
+                    editor.commit();
 
-                startActivity(i);
+                    Intent i = new Intent(Main2Activity.this, absentStudent.class);
 
-                finish();
-            }
-        }, 0);
+                    startActivity(i);
+
+                    finish();
+                }
+            }, 0);
+
     }
 
     //Button Next click Listner ends Here

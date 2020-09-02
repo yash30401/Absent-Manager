@@ -10,7 +10,10 @@
 </style>
 
 
+    <style name="HeaderBar">
+        <item name="android:background">@color/colorPrimary</item>
 
+    </style>
 
 
     <style name="splashScreen" parent="Theme.AppCompat.NoActionBar">

@@ -42,18 +42,21 @@ public class MainActivity extends AppCompatActivity {
                 Intent i=new Intent(MainActivity.this,Main2Activity.class);
                 startActivity(i);
 
+                if (FirstTime2==true){
+                    Intent i2=new Intent(MainActivity.this,Main2Activity.class);
+                    startActivity(i2);
+                }else{
+
+                    Intent i2=new Intent(MainActivity.this,absentStudent.class);
+                    startActivity(i2);
+
+                }
+
             }
 
 
-            if (FirstTime2==true){
-                Intent i=new Intent(MainActivity.this,Main2Activity.class);
-                startActivity(i);
-            }else{
 
-                Intent i=new Intent(MainActivity.this,absentStudent.class);
-                startActivity(i);
 
-            }
 
 
             //invoke the SecondActivity.

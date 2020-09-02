@@ -194,7 +194,7 @@ public class Attendence_Manager extends AppCompatActivity {
 
 
 
-            buttonTap++;
+
 
 
         if (!student_name.getText().toString().matches("^[A-Za-z\\s]+$")) {

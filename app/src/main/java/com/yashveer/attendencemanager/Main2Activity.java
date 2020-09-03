@@ -6,7 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -22,10 +22,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
+
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
@@ -34,7 +33,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+
 
 
 public class Main2Activity extends AppCompatActivity {

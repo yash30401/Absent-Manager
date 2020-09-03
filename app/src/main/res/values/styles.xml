@@ -9,6 +9,9 @@
     <item name="colorAccent">@color/colorAccent</item>
 </style>
 
+    <style name="DialogThemeAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialoganim</item>
+    </style>
 
     <style name="HeaderBar">
         <item name="android:background">@color/colorPrimary</item>

@@ -1,62 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/dialog_layout"
-    android:layout_margin="20dp"
-    android:background="#FFF"
 
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/warninglayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:elevation="0dp"
+   android:background="#FFF"
 
     android:layout_gravity="center_horizontal|center_vertical"
+    android:padding="10dp"
     >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="#FFFFBB33"
-        android:contentDescription="@string/app_name"
-        android:scaleType="center"
-        android:src="@drawable/ic_baseline_people_24"
-
-        />
-
-    <EditText
-        android:id="@+id/studentName"
-        android:inputType="textPersonName"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
+        android:text="Are you sure you want delete this?"
+        android:textAlignment="center"
+        android:textSize="22sp"
         android:fontFamily="@font/nunito"
-        android:hint="@string/student_name_string"
         android:textColor="#000"
-
         />
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
+        android:background="@drawable/warningback"
         >
         <Button
-            android:id="@+id/addStudent"
+            android:id="@+id/sure"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="@string/add_student"
+            android:text="Delete"
             android:background="@drawable/button_design"
             android:textColor="@color/white"
-            android:onClick="addStudentClick"
+            android:onClick="sure"
             />
 
         <Button
-            android:id="@+id/cancel_student"
+            android:id="@+id/cancel_sure"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -64,9 +51,10 @@
             android:text="@string/cancel_student"
             android:background="@drawable/button_design"
             android:textColor="@color/white"
-            android:onClick="cancelStudentClick"
+            android:onClick="cancelsure"
             />
 
     </LinearLayout>
+
 
 </LinearLayout>

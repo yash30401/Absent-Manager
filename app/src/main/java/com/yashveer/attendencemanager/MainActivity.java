@@ -8,6 +8,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieComposition;
@@ -18,10 +21,25 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     boolean FirstTime2;
 
+    TextView textView,textView2;
+
+    Animation animation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        animation= AnimationUtils.loadAnimation(this,R.anim.animtextview);
+
+        textView=findViewById(R.id.textView);
+        textView2=findViewById(R.id.textView2);
+
+        textView.startAnimation(animation);
+        textView.animate().translationY(100).setDuration(2000).start();
+        textView2.animate().translationY(-100).setDuration(2000).start();
+
+
 
         LottieAnimationView animationView = (LottieAnimationView) findViewById(R.id.animationView);
 

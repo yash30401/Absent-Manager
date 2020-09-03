@@ -22,6 +22,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
@@ -65,12 +69,16 @@ public class Main2Activity extends AppCompatActivity {
 
     MyDataHelper myDataHelper;
 
+    Animation absentanim;
+
 
     //onCreate Starts From her------------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        absentanim= AnimationUtils.loadAnimation(this,R.anim.dialoganim);
 
         mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(mTopToolbar);
@@ -113,6 +121,8 @@ public class Main2Activity extends AppCompatActivity {
             c.moveToNext();
         }
 
+        absentStudentListView.startAnimation(absentanim);
+
         //ListView Onclick Starts from here
 
         absentStudentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -120,6 +130,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 myDataHelper2.insertData(parent.getItemAtPosition(position).toString(), sqLiteDatabase2);
+
                 nextButton.setVisibility(View.VISIBLE);
                 Toast.makeText(Main2Activity.this, "Student " + parent.getItemAtPosition(position).toString() + " Added to absent List", Toast.LENGTH_SHORT).show();
 
@@ -128,6 +139,8 @@ public class Main2Activity extends AppCompatActivity {
         });
 
         //ListVeiw on click ends Here
+
+
 
 
     }
@@ -212,6 +225,9 @@ public class Main2Activity extends AppCompatActivity {
 
 
             myDataHelper.insertData(student_name.getText().toString(), sqLiteDatabase);
+
+            Toast.makeText(Main2Activity.this,"You have to start the app again if you wish to see the changes",Toast.LENGTH_LONG).show();
+
 
 
             alertDialog.dismiss();

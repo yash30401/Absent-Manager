@@ -26,6 +26,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
@@ -72,6 +74,7 @@ public class Attendence_Manager extends AppCompatActivity {
     SQLiteDatabase studentNameData;
     MyDataHelper myDataHelper;
 
+    Animation listviewanim;
 
 
 
@@ -82,6 +85,7 @@ public class Attendence_Manager extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendence_manager);
 
+        listviewanim=AnimationUtils.loadAnimation(this,R.anim.dialoganim);
 
         listView = findViewById(R.id.ListView);
 
@@ -115,6 +119,9 @@ public class Attendence_Manager extends AppCompatActivity {
       myDataHelper=new MyDataHelper(this);
         studentNameData=myDataHelper.getWritableDatabase();
 
+
+
+        listView.startAnimation(listviewanim);
 
 
         // ListView Item Selected Start From Here!>--------------------------------------------------------------------------------------------
@@ -204,6 +211,7 @@ public class Attendence_Manager extends AppCompatActivity {
             arrayList.add(student_name.getText().toString());
 
             DoneButton.setVisibility(View.VISIBLE);
+
 
 
 

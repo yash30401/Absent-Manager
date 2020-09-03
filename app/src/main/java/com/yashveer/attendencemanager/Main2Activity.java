@@ -216,6 +216,9 @@ public class Main2Activity extends AppCompatActivity {
         }else if(id==R.id.aboutdeveloper){
             Intent i=new Intent(Main2Activity.this,aboutdeveloper.class);
             startActivity(i);
+        }else if(id==R.id.privacypolicy2){
+            Intent i=new Intent(Main2Activity.this,privacypolicy.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class aboutapp extends AppCompatActivity {
 
 
-    TextView aboutapp;
+    TextView aboutapp,info;
     Animation title,infoanim;
 
 
@@ -21,10 +21,12 @@ public class aboutapp extends AppCompatActivity {
         setContentView(R.layout.activity_aboutapp);
 
         aboutapp=findViewById(R.id.abotuapp);
+        info=findViewById(R.id.aboutthisapp);
         title= AnimationUtils.loadAnimation(this,R.anim.aboutappanim);
         infoanim= AnimationUtils.loadAnimation(this,R.anim.infoanim);
 
         aboutapp.startAnimation(title);
+        info.startAnimation(infoanim);
 
 
 

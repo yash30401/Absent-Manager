@@ -26,15 +26,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/info"
+        android:id="@+id/aboutthisapp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:layout_marginBottom="69dp"
         android:fontFamily="@font/nunito"
         android:padding="20dp"
-        android:text="@string/it_is_the_simple_app_in_which_teachers_can_make_a_list_of_the_absent_students_this_app_provides_two_main_features_one_of_those_features_is_you_can_save_the_absent_student_list_and_you_can_also_share_that_list_and_later_on_the_list_which_you_saved_may_also_be_helpful_for_you_in_the_future"
 
+        android:text="@string/it_is_the_simple_app_in_which_teachers_can_make_a_list_of_the_absent_students_this_app_provides_two_main_features_one_of_those_features_is_you_can_save_the_absent_student_list_and_you_can_also_share_that_list_and_later_on_the_list_which_you_saved_may_also_be_helpful_for_you_in_the_future"
         android:textAlignment="center"
         android:textColor="#F8F5F5"
         android:textSize="20sp"

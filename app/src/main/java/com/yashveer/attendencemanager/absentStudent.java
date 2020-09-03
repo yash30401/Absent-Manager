@@ -171,6 +171,9 @@ public class absentStudent extends AppCompatActivity {
         }else if(id==R.id.developer){
             Intent i=new Intent(absentStudent.this,aboutdeveloper.class);
             startActivity(i);
+        }else if(id==R.id.privacypolicy){
+            Intent i=new Intent(absentStudent.this,privacypolicy.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

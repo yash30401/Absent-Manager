@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 public class aboutdeveloper extends AppCompatActivity {
 
-    TextView aboutdeveloper,info;
-    Animation titledeveloper;
+    TextView aboutdeveloper,hiyashveer;
+    Animation titledeveloper,devanim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,14 @@ public class aboutdeveloper extends AppCompatActivity {
         setContentView(R.layout.activity_aboutdeveloper);
 
         aboutdeveloper=findViewById(R.id.aboutdeveloper);
-
+        hiyashveer=findViewById(R.id.hiyashveer);
         titledeveloper= AnimationUtils.loadAnimation(this,R.anim.aboutappanim);
+        devanim= AnimationUtils.loadAnimation(this,R.anim.infoanim);
 
        aboutdeveloper.startAnimation(titledeveloper);
+       hiyashveer.startAnimation(devanim);
+
+
 
     }
 }

@@ -165,6 +165,12 @@ public class absentStudent extends AppCompatActivity {
             shareAnswer();
         }else if(id==R.id.save){
             create_file();
+        }else if(id==R.id.aboutaaplication){
+            Intent i=new Intent(absentStudent.this,aboutapp.class);
+            startActivity(i);
+        }else if(id==R.id.developer){
+            Intent i=new Intent(absentStudent.this,aboutdeveloper.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

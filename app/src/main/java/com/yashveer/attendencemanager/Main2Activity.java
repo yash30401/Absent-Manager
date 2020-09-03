@@ -210,6 +210,12 @@ public class Main2Activity extends AppCompatActivity {
             alertDialog = new AlertDialog.Builder(Main2Activity.this).setView(myView).create();
 
             alertDialog.show();
+        }else if(id==R.id.aboutapp2){
+            Intent i=new Intent(Main2Activity.this,aboutapp.class);
+            startActivity(i);
+        }else if(id==R.id.aboutdeveloper){
+            Intent i=new Intent(Main2Activity.this,aboutdeveloper.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

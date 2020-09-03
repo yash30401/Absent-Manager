@@ -18,4 +18,27 @@
         android:icon="@drawable/ic_baseline_save_24"
         app:showAsAction="ifRoom"></item>
 
+    <item
+        android:id="@+id/aboutaaplication"
+        android:orderInCategory="300"
+        android:title="About App"
+        android:icon="@drawable/ic_baseline_save_24"
+     ></item>
+
+    <item
+        android:id="@+id/developer"
+        android:orderInCategory="300"
+        android:title="About Developer"
+        android:icon="@drawable/ic_baseline_save_24"
+        ></item>
+
+    <item
+        android:id="@+id/privacypolicy"
+        android:orderInCategory="300"
+        android:title="Privacy Policy"
+        android:icon="@drawable/ic_baseline_save_24"
+        ></item>
+
+
+
 </menu>

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Attendance Manager</string>
-    <string name="attendence_manager">Attendance Manager</string>
+    <string name="app_name">Absent Manager</string>
+    <string name="attendence_manager">Absent Manager</string>
     <string name="kendriya_vidyalaya">KENDRIYA VIDYALAYA</string>
 
     <string name="fab_content_desc">fab_content_desc</string>
@@ -15,5 +15,13 @@
     <string name="next">Next</string>
     <string name="list_of_students_who_are_absent">List Of Students Who are Absent</string>
     <string name="add_student_s_name_of_your_class">Add Student\'s Name Of Your Class.</string>
+    <string name="developer_name">Developer Name:-</string>
+    <string name="yashveer_singh">Yashveer Singh</string>
+    <string name="about_developer">About Developer</string>
+    <string name="about_this_app">About this app</string>
+    <string name="it_is_the_simple_app_in_which_teachers_can_make_a_list_of_the_absent_students_this_app_provides_two_main_features_one_of_those_features_is_you_can_save_the_absent_student_list_and_you_can_also_share_that_list_and_later_on_the_list_which_you_saved_may_also_be_helpful_for_you_in_the_future">It is the simple app in which teachers can make a list of the absent students. This app provides two main features. One of those features is you can save the absent student list and you can also share that list. And later on, the list which you saved may also be helpful for you in the future.</string>
+    <string name="developer_email">Developer Email:-</string>
+    <string name="yashveersingh30401_gmail_com">yashveersingh30401@gmail.com</string>
+    <string name="hi_i_am_yashveer_singh_student_of_kendriya_vidyalaya_and_i_made_this_app_for_school_and_i_want_to_thank_all_the_users_of_this_app">Hi,"\n"I am Yashveer Singh Student Of Kendriya Vidyalaya. And I want to thank all the users who are there and using this app And support my idea and taking it as useful in their daily life.</string>
 
 </resources>

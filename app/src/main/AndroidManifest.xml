@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yashveer.attendencemanager"
-    android:installLocation="preferExternal"
-    >
+    android:installLocation="preferExternal">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,35 +15,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".aboutdeveloper"></activity>
+        <activity android:name=".aboutapp" />
 
         <provider
-            android:authorities="com.yashveer.attendencemanager"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.yashveer.attendencemanager"
             android:exported="false"
             android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_path"/>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
         </provider>
 
-
-
-        <activity android:name=".absentStudent"
+        <activity
+            android:name=".absentStudent"
+            android:configChanges="orientation|screenLayout|keyboardHidden|screenSize"
             android:label="Absent Students">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.SEND"/>
-                <category
-                    android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.SEND" />
 
-                <data android:mimeType="text/plain"/>
-               
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Main2Activity"
-            android:label="Students"
-            android:configChanges="orientation|screenLayout|keyboardHidden|screenSize" />
+            android:configChanges="orientation|screenLayout|keyboardHidden|screenSize"
+            android:label="Students" />
         <activity
             android:name=".Attendence_Manager"
             android:configChanges="orientation|screenLayout|keyboardHidden|screenSize" />

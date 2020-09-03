@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     boolean FirstTime2;
 
-    TextView textView,textView2;
+    TextView textView,textView2,creator;
 
     Animation animation;
 
@@ -34,10 +34,13 @@ public class MainActivity extends AppCompatActivity {
 
         textView=findViewById(R.id.textView);
         textView2=findViewById(R.id.textView2);
+        creator=findViewById(R.id.creator);
 
         textView.startAnimation(animation);
+
         textView.animate().translationY(100).setDuration(2000).start();
         textView2.animate().translationY(-100).setDuration(2000).start();
+        creator.animate().translationY(-100).setDuration(2000).start();
 
 
 

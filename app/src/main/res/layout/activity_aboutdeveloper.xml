@@ -96,8 +96,8 @@
 
     <TextView
         android:id="@+id/hiyashveer"
-        android:layout_width="398dp"
-        android:layout_height="262dp"
+        android:layout_width="360dp"
+        android:layout_height="238dp"
         android:layout_marginTop="34dp"
         android:fontFamily="@font/nunito"
         android:padding="20dp"

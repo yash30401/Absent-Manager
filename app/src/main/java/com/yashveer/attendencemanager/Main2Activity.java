@@ -16,6 +16,7 @@ import android.os.Bundle;
 
 
 import android.os.Handler;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -71,6 +72,7 @@ public class Main2Activity extends AppCompatActivity {
     Animation absentanim;
 
 
+
     //onCreate Starts From her------------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,18 +126,32 @@ public class Main2Activity extends AppCompatActivity {
 
         //ListView Onclick Starts from here
 
+
+
         absentStudentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                myDataHelper2.insertData(parent.getItemAtPosition(position).toString(), sqLiteDatabase2);
+                if(absentStudentListView.getChildAt(position).isEnabled())
+                {
+                    absentStudentListView.getChildAt(position).setEnabled(false);
+                    myDataHelper2.insertData(parent.getItemAtPosition(position).toString(), sqLiteDatabase2);
 
-                nextButton.setVisibility(View.VISIBLE);
-                Toast.makeText(Main2Activity.this, "Student " + parent.getItemAtPosition(position).toString() + " Added to absent List", Toast.LENGTH_SHORT).show();
+                    nextButton.setVisibility(View.VISIBLE);
+                    Toast.makeText(Main2Activity.this, "Student " + parent.getItemAtPosition(position).toString() + " Added to absent List", Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
 
 
             }
+
+
         });
+
 
         //ListVeiw on click ends Here
 
